@@ -22,6 +22,7 @@ async function renderUsers() {
     let container = document.querySelector('.container');
     container.innerHTML = html;
 
+
 }
 
 renderUsers();
