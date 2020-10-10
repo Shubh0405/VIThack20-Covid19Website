@@ -39,7 +39,6 @@ window.setTimeout(getPagination('#table-id'), 1500);
 $('#maxRows').trigger('change');
 
 function getPagination(table) {
-
     $('#maxRows').on('change', function() {
         $('.pagination').html('');
         var trnum = 0;
@@ -63,34 +62,29 @@ function getPagination(table) {
 								    </li>').show();
             }
         }
-        $('.pagination li:first-child').addClass('active'); // add active class to the first li
-        //SHOWING ROWS NUMBER OUT OF TOTAL DEFAULT
+        $('.pagination li:first-child').addClass('active');
         showig_rows_count(maxRows, 1, totalRows);
-        //SHOWING ROWS NUMBER OUT OF TOTAL DEFAULT
 
-        $('.pagination li').on('click', function(e) { // on click each page
+        $('.pagination li').on('click', function(e) {
             e.preventDefault();
-            var pageNum = $(this).attr('data-page'); // get it's number
-            var trIndex = 0; // reset tr counter
-            $('.pagination li').removeClass('active'); // remove active class from all li
-            $(this).addClass('active'); // add active class to the clicked
-            //SHOWING ROWS NUMBER OUT OF TOTAL
+            var pageNum = $(this).attr('data-page');
+            var trIndex = 0;
+            $('.pagination li').removeClass('active');
+            $(this).addClass('active');
+
             showig_rows_count(maxRows, pageNum, totalRows);
-            //SHOWING ROWS NUMBER OUT OF TOTAL
-            $(table + ' tr:gt(0)').each(function() { // each tr in table not the header
-                trIndex++; // tr index counter
-                // if tr index gt maxRows*pageNum or lt maxRows*pageNum-maxRows fade if out
+
+            $(table + ' tr:gt(0)').each(function() {
+                trIndex++;
+
                 if (trIndex > (maxRows * pageNum) || trIndex <= ((maxRows * pageNum) - maxRows)) {
                     $(this).hide();
                 } else {
                     $(this).show();
-                } //else fade in
-            }); // end of for each tr in table
-        }); // end of on click pagination list
+                }
+            });
+        });
     });
-    // end of on select change
-
-    // END OF PAGINATION
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
