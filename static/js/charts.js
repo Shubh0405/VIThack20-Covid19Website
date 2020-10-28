@@ -60,32 +60,32 @@ renderUsers();
 $("#state").on('change', function() {
     renderUsers();
     lineChartDemo.destroy();
-    window.setTimeout(showGraph, 2000);
+    window.setTimeout(showGraph, 4000);
 });
 $("#data").on('change', function() {
     renderUsers();
     lineChartDemo.destroy();
-    window.setTimeout(showGraph, 2000);
+    window.setTimeout(showGraph, 4000);
 });
 $("#gender").on('change', function() {
     renderUsers();
     lineChartDemo.destroy();
-    window.setTimeout(showGraph, 2000);
+    window.setTimeout(showGraph, 4000);
 });
 $("#age").on('change', function() {
     renderUsers();
     lineChartDemo.destroy();
-    window.setTimeout(showGraph, 2000);
+    window.setTimeout(showGraph, 4000);
 });
 $("#from_date").on('change', function() {
     renderUsers();
     lineChartDemo.destroy();
-    window.setTimeout(showGraph, 2000);
+    window.setTimeout(showGraph, 4000);
 });
 $("#to_date").on('change', function() {
     renderUsers();
     lineChartDemo.destroy();
-    window.setTimeout(showGraph, 2000);
+    window.setTimeout(showGraph, 4000);
 });
 
 console.log(lineChartData);
@@ -113,7 +113,7 @@ function showGraph() {
     });
 };
 
-window.setTimeout(showGraph, 2000);
+window.setTimeout(showGraph, 4000);
 
 $('#downloadPdf').click(function(event) {
     // get size of report page
