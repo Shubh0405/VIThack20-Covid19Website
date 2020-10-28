@@ -2,7 +2,7 @@ document.getElementById("from_date").min = "2020-01-30";
 document.getElementById("to_date").min = "2020-01-30";
 
 async function getUsers() {
-    let url = 'http://127.0.0.1:8000/api/charts_api';
+    let url = 'https://covinfo19.herokuapp.com/api/charts_api';
     let state = $("#state").val();
     let data = $("#data").val();
     let gender = $("#gender").val();
